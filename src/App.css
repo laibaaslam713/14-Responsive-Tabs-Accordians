@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.services-root {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #f0f4ff 0%, #fafafa 60%, #f0fdf4 100%);
+  padding: 72px 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid #bfdbfe;
+  margin-bottom: 16px;
+  font-family: 'Sora', sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+.section-title span { color: #2563eb; }
+.section-sub {
+  font-size: 15px;
+  color: #64748b;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.desktop-tabs { display: block; }
+.mobile-accordion { display: none; }
+
+.tabs-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.07);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 460px;
+}
+
+.tab-sidebar {
+  background: #f8fafc;
+  border-right: 1.5px solid #f1f5f9;
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.tab-btn:hover { background: #f1f5f9; }
+.tab-btn.active {
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+.tab-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: background 0.22s;
+}
+
+.tab-label {
+  flex: 1;
+}
+.tab-label-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+  font-family: 'Sora', sans-serif;
+  transition: color 0.22s;
+  letter-spacing: -0.01em;
+}
+.tab-label-sub {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 1px;
+}
+
+.tab-btn.active .tab-indicator {
+  opacity: 1;
+}
+.tab-indicator {
+  position: absolute;
+  right: 0; top: 20%; bottom: 20%;
+  width: 3px;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.22s;
+}
+
+.tab-panel {
+  padding: 44px 48px;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.tab-panel.hidden { opacity: 0; transform: translateY(6px); }
+.tab-panel.visible { opacity: 1; transform: translateY(0); }
+
+.panel-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.panel-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+.panel-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-family: 'Sora', sans-serif;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1.5px solid;
+}
+
+.panel-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+.panel-desc {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+.panel-features-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 14px;
+  font-family: 'Sora', sans-serif;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+.feature-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #334155;
+  padding: 9px 13px;
+  border-radius: 9px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  transition: border-color 0.2s, background 0.2s;
+}
+.feature-pill:hover { background: #f1f5f9; }
+
+.check-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.accordion-shell {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .desktop-tabs { display: none; }
+  .mobile-accordion { display: block; }
+  .services-root { padding: 52px 16px; }
+}
+
+@media (max-width: 480px) {
+  .section-title { font-size: 21px; }
+}
